@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late final pageController;
+  late final _pageController;
   late int _indexPage;
 
   final titlePage = [
@@ -24,14 +24,14 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   void initState() {
-    pageController = PageController();
+    _pageController = PageController();
     _indexPage = 0;
     super.initState();
   }
 
   @override
   void dispose() {
-    pageController.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
           selectedIndex: _indexPage,
           onDestinationSelected: (index) {
             setState(() {
-              pageController.animateToPage(
+              _pageController.animateToPage(
                 index,
                 duration: const Duration(milliseconds: 500),
                 curve: Curves.ease,
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: PageView(
-        controller: pageController,
+        controller: _pageController,
         onPageChanged: (index) {
           setState(() {
             _indexPage = index;

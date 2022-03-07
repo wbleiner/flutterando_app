@@ -39,6 +39,12 @@ class ThemeCustom {
         fontWeight: FontWeight.w500,
         color: ColorsCustom.highlightDark,
       ),
+      headline4: TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: ColorsCustom.highlightDark,
+      ),
       bodyText1: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 12,
@@ -102,6 +108,13 @@ class ThemeCustom {
         //Description
         fontFamily: 'Poppins',
         fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: ColorsCustom.highlightLight,
+      ),
+      headline4: TextStyle(
+        //Description
+        fontFamily: 'Poppins',
+        fontSize: 14,
         fontWeight: FontWeight.w500,
         color: ColorsCustom.highlightLight,
       ),
