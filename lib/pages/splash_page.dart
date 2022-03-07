@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutterando_app/routes/app_routes.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -35,8 +36,8 @@ class _SplashPageState extends State<SplashPage> {
       const Duration(seconds: 5),
       (() {
         setState(() {
-          Navigator.of(context)
-              .pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              AppRoutes.home, (Route<dynamic> route) => false);
         });
       }),
     );
