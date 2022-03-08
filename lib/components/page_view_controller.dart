@@ -4,7 +4,7 @@ import 'package:flutterando_app/pages/bodies/profile.dart';
 import 'package:flutterando_app/pages/bodies/repositories.dart';
 
 class PageViewControllerCustom extends StatelessWidget {
-  final pageController;
+  final PageController pageController;
   const PageViewControllerCustom({
     Key? key,
     required this.pageController,
@@ -17,8 +17,8 @@ class PageViewControllerCustom extends StatelessWidget {
       reverse: true,
       children: [
         Home(),
-        Repositories(),
-        Profile(),
+        const Repositories(),
+        const Profile(),
       ],
     );
   }

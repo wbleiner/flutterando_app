@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Exercicio1 extends StatefulWidget {
-  const Exercicio1({Key? key}) : super(key: key);
+class ControlledAnimation1 extends StatefulWidget {
+  const ControlledAnimation1({Key? key}) : super(key: key);
 
   @override
-  _Exercicio1State createState() => _Exercicio1State();
+  _ControlledAnimation1State createState() => _ControlledAnimation1State();
 }
 
-class _Exercicio1State extends State<Exercicio1>
+class _ControlledAnimation1State extends State<ControlledAnimation1>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation _rectangleTransform;
@@ -58,7 +58,7 @@ class _Exercicio1State extends State<Exercicio1>
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Exercicio 1',
+          'Animações Controladas 1',
           style: Theme.of(context).textTheme.headline1,
         ),
       ),

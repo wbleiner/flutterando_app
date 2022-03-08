@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_app/activitys/animations/controlled_animations/pages/exercicio_1.dart';
-import 'package:flutterando_app/activitys/animations/controlled_animations/pages/exercicio_2.dart';
+import 'package:flutterando_app/exercises/animations/controlled_animations/pages/controlled_animation1.dart';
+import 'package:flutterando_app/exercises/animations/controlled_animations/pages/controlled_animation2.dart';
+import 'package:flutterando_app/exercises/animations/implicit_animations/pages/implicit_animtion1.dart';
+import 'package:flutterando_app/exercises/animations/implicit_animations/pages/implicit_animtion2.dart';
+import 'package:flutterando_app/exercises/mockups/sign_in_tinder.dart';
+import 'package:flutterando_app/exercises/mockups/sign_up_manage_expenses.dart';
 import 'package:flutterando_app/pages/details_page.dart';
 import 'package:flutterando_app/pages/home_page.dart';
 import 'package:flutterando_app/pages/splash_page.dart';
@@ -34,11 +38,15 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.isDark ? ThemeCustom.dark : ThemeCustom.light,
       initialRoute: AppRoutes.splash,
       routes: {
-        AppRoutes.home: (_) => HomePage(),
+        AppRoutes.home: (_) => const HomePage(),
         AppRoutes.splash: (_) => const SplashPage(),
         AppRoutes.detailsPage: (_) => const DetailsPage(),
-        AppRoutes.controlledAnimation1: (_) => const Exercicio1(),
-        AppRoutes.controlledAnimation2: (_) => const Exercicio2(),
+        AppRoutes.controlledAnimation1: (_) => const ControlledAnimation1(),
+        AppRoutes.controlledAnimation2: (_) => const ControlledAnimation2(),
+        AppRoutes.implicitAnimation1: (_) => const ImplicitAnimation1(),
+        AppRoutes.implicitAnimation2: (_) => const ImplicitAnimation2(),
+        AppRoutes.mockupTinder: (_) => const SingnInTinder(),
+        AppRoutes.mockupExpenses: (_) => const SignUpManageExpenses(),
       },
     );
   }

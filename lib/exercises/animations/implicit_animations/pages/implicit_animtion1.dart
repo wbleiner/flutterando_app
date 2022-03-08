@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Exercicio1 extends StatefulWidget {
-  const Exercicio1({Key? key}) : super(key: key);
+class ImplicitAnimation1 extends StatefulWidget {
+  const ImplicitAnimation1({Key? key}) : super(key: key);
 
   @override
-  State<Exercicio1> createState() => _Exercicio1State();
+  State<ImplicitAnimation1> createState() => _ImplicitAnimation1State();
 }
 
-class _Exercicio1State extends State<Exercicio1> {
+class _ImplicitAnimation1State extends State<ImplicitAnimation1> {
   final _duration = const Duration(seconds: 1);
   bool isAnimated = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Exercicio 1'),
+        title: Text(
+          'Animações Implicitas 1',
+          style: Theme.of(context).textTheme.headline1,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

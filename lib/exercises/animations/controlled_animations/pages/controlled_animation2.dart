@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_app/activitys/animations/controlled_animations/data/dummy_data.dart';
+import 'package:flutterando_app/exercises/animations/controlled_animations/data/dummy_data.dart';
 
-import '../components/ExpansionTileCustom.dart';
+import '../components/expansion_tile_custom.dart';
 
-class Exercicio2 extends StatefulWidget {
-  const Exercicio2({Key? key}) : super(key: key);
+class ControlledAnimation2 extends StatefulWidget {
+  const ControlledAnimation2({Key? key}) : super(key: key);
 
   @override
-  _Exercicio2State createState() => _Exercicio2State();
+  _ControlledAnimation2State createState() => _ControlledAnimation2State();
 }
 
-class _Exercicio2State extends State<Exercicio2> {
+class _ControlledAnimation2State extends State<ControlledAnimation2> {
   final data = dummyData;
 
   @override
@@ -18,7 +18,7 @@ class _Exercicio2State extends State<Exercicio2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Exercicio 2',
+          'Animações Controladas 2',
           style: Theme.of(context).textTheme.headline1,
         ),
       ),

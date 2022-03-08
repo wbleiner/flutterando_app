@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late final _pageController;
+  late final PageController _pageController;
   late int _indexPage;
 
   final titlePage = [
@@ -145,8 +145,8 @@ class _HomePageState extends State<HomePage> {
         },
         children: [
           Home(),
-          Repositories(),
-          Profile(),
+          const Repositories(),
+          const Profile(),
         ],
       ),
     );

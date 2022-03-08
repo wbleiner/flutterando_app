@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_app/widgets/widget_card.dart';
+import 'package:flutterando_app/widgets/exercise_card.dart';
 
 import '../../data/dummy_data.dart';
 
@@ -10,26 +10,30 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: const EdgeInsets.all(10),
       children: [
-        WidgetCard(
+        ExerciseCard(
           title: 'Animações',
           image: 'assets/images/icons/Icon awesome-running.png',
           content:
               'Estudos sobre animações implicitas e controladas, contendo 4 exercícios e 2 estudos',
-          activity: data[0],
+          exercise: data[0],
+          githubUrl: 'https://github.com/wbleiner/animations-repositories',
         ),
-        WidgetCard(
+        ExerciseCard(
           title: 'Leitura de Mockup',
           image: 'assets/images/icons/Icon awesome-glasses.png',
           content:
               'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
-          activity: data[0],
+          exercise: data[1],
+          githubUrl: 'https://github.com/wbleiner/mockup_1',
         ),
-        WidgetCard(
+        ExerciseCard(
           title: 'Playground',
           image: 'assets/images/icons/Icon material-toys.png',
           content: 'Ambiente destinado a testes e estudos em geral',
-          activity: data[0],
+          exercise: data[2],
+          githubUrl: '',
         ),
       ],
     );

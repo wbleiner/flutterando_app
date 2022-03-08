@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_app/models/activity_model.dart';
+import 'package:flutterando_app/models/exercise_model.dart';
 import 'package:flutterando_app/routes/app_routes.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../providers/theme_provider.dart';
 
-class WidgetCard extends StatelessWidget {
-  const WidgetCard({
+class ExerciseCard extends StatefulWidget {
+  final String title;
+  final String content;
+  final String image;
+  final String githubUrl;
+
+  final ExerciseModel exercise;
+
+  const ExerciseCard({
     Key? key,
     required this.title,
     required this.content,
     required this.image,
-    required this.activity,
+    required this.exercise,
+    required this.githubUrl,
   }) : super(key: key);
 
-  final String title;
-  final String content;
-  final String image;
+  @override
+  State<ExerciseCard> createState() => _ExerciseCardState();
+}
 
-  final ActivityModel activity;
-
+class _ExerciseCardState extends State<ExerciseCard> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
@@ -35,12 +43,12 @@ class WidgetCard extends StatelessWidget {
             leading: CircleAvatar(
               backgroundColor: Theme.of(context).primaryColor,
               child: Image.asset(
-                image,
+                widget.image,
                 color: Theme.of(context).highlightColor,
               ),
             ),
             title: Text(
-              title,
+              widget.title,
               style: Theme.of(context).textTheme.headline2,
             ),
             trailing: Row(
@@ -51,7 +59,7 @@ class WidgetCard extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 Text(
-                  activity.activityAddressList.length.toString(),
+                  widget.exercise.exerciseAddressList.length.toString(),
                   style: Theme.of(context).textTheme.headline3,
                 ),
               ],
@@ -60,7 +68,7 @@ class WidgetCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             child: Text(
-              content,
+              widget.content,
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
@@ -80,7 +88,13 @@ class WidgetCard extends StatelessWidget {
                 'Acessar código fonte',
                 style: Theme.of(context).textTheme.bodyText2,
               ),
-              onPressed: () {},
+              onPressed: () async {
+                if (await canLaunch(widget.githubUrl)) {
+                  await launch(widget.githubUrl);
+                } else {
+                  throw 'não foi lançado';
+                }
+              },
               style: TextButton.styleFrom(
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.only(
@@ -92,7 +106,7 @@ class WidgetCard extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamed(
                   AppRoutes.detailsPage,
-                  arguments: activity,
+                  arguments: widget.exercise,
                 );
               },
               child: const Text('Ver mais'),

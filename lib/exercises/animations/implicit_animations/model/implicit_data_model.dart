@@ -1,8 +1,8 @@
-class DataModel {
+class ImplicitDataModel {
   final String title;
   final String content;
 
-  DataModel({
+  ImplicitDataModel({
     required this.title,
     required this.content,
   });

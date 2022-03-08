@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_app/models/activity_model.dart';
+import 'package:flutterando_app/models/exercise_model.dart';
 import 'package:flutterando_app/providers/theme_provider.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -13,11 +13,10 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     NumberFormat formatter = NumberFormat("00");
     final activity =
-        ModalRoute.of(context)!.settings.arguments as ActivityModel;
+        ModalRoute.of(context)!.settings.arguments as ExerciseModel;
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      
       appBar: AppBar(
         title: ListTile(
           contentPadding: const EdgeInsets.all(0),
@@ -40,11 +39,12 @@ class DetailsPage extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-          itemCount: activity.activityAddressList.length,
+          padding: const EdgeInsets.all(10),
+          itemCount: activity.exerciseAddressList.length,
           itemBuilder: (context, index) => GestureDetector(
                 onTap: () {
                   Navigator.of(context)
-                      .pushNamed(activity.activityAddressList[index]);
+                      .pushNamed(activity.exerciseAddressList[index]);
                 },
                 child: Card(
                   shape: RoundedRectangleBorder(
